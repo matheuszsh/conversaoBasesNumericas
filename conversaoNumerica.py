@@ -57,6 +57,7 @@ def decimalParaBi():
 def binarioParaDec():
     bi = int(input("Digite o binário:"))
     limparTerminal()
+    
             
 
 # -------------FUNÇÕES AUXILIÁRES-----------------
