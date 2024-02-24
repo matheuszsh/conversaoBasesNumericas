@@ -3,31 +3,19 @@ import os
 
 # -----------FUNÇÃO PRINCIPAL-----------
 def main():
-    try :
+    resp = menu()
+    limparTerminal()
+
+    while resp < 1 or resp > 2:
         resp = menu()
         limparTerminal()
 
-        while resp < 1 or resp > 2:
-            resp = menu()
-            limparTerminal()
-
-        if resp == 1 :
-            decimalParaBi()
-            input("Aperte a tecla ENTER para prosseguir")
-            limparTerminal()
-            main()
-            
-        elif resp == 2 :
-            binarioParaDec()
-            input("Aperte a tecla ENTER para prosseguir")
-            limparTerminal()
-            main()
-    
-    except:
-        input("Erro: algo deu errado. Aperte ENTER para voltar ao menu.")
+    if resp == 1 :
+        decimalParaBi()
         limparTerminal()
-        main()
-        
+        menu()
+    elif resp == 2 :
+        print()
 
 # ------------FUNÇÕES SECUNDÁRIAS------------
 
@@ -42,12 +30,10 @@ def decimalParaBi():
 
     binario = ""
 
-    # calcula o decimal diluindo (/) o binário após obter o primeiro resto da divisão (0 ou 1) (%)
     while d > 0:
         binario += str (d % 2)
         d = int (d / 2)
 
-    # Adiciona ao binário o numero '0' caso esteja faltando, para completar 8 bits
     while len (binario) < 8:
         binario += "0"
 
@@ -61,7 +47,7 @@ def decimalParaBi():
         else:
             exit(0)
 
-    binario = binario[::-1]# técnica Slicing / inverte a string
+    binario = binario[::-1]# técnica Slicing
 
     print(f"Decimal:{dPrint}\nBinário:{binario}")
 
@@ -69,24 +55,9 @@ def decimalParaBi():
 #Binário para decimal
     
 def binarioParaDec():
-    # pede o número em binário
-    bi = str(input("Digite o binário:"))
+    bi = int(input("Digite o binário:"))
     limparTerminal()
     
-    # inverte a string para ler da direita pra esquerda
-    bi = bi[::-1]# técnica Slicing
-    
-    decimal = 0
-    n = 0
-    
-    # verifica se cada caracter é igual a '1', e caso for, realiza o calculo binário
-    for b in bi:
-        if (b == '1'):
-            decimal += 2 ** n
-    
-        n += 1
-            
-    print(f"Binário:{bi}\nDecimal:{decimal}")
             
 
 # -------------FUNÇÕES AUXILIÁRES-----------------
