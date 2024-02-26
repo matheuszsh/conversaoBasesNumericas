@@ -7,21 +7,26 @@ def main():
         resp = menu()
         limparTerminal()
 
-        while resp < 1 or resp > 2:
+        while resp < 1 or resp > 4:
             resp = menu()
             limparTerminal()
 
         if resp == 1 :
-            decimalParaBi()
-            input("Aperte a tecla ENTER para prosseguir")
-            limparTerminal()
-            main()
+            funcDecimal()
             
         elif resp == 2 :
-            binarioParaDec()
-            input("Aperte a tecla ENTER para prosseguir")
-            limparTerminal()
-            main()
+            funcBinario()
+
+        elif resp == 3 :
+            funcOctal()
+        
+        elif resp == 4 :
+            funcHexadecimal()
+        
+        # Reuso de recurso
+        input("Aperte a tecla ENTER para prosseguir")
+        limparTerminal()
+        main()
     
     except:
         input("Erro: algo deu errado. Aperte ENTER para voltar ao menu.")
@@ -33,61 +38,79 @@ def main():
 
 #---------------FUNÇÕES DE CONVERSÃO------------------
         
-# Decimal para binário
-def decimalParaBi():
+# FUNÇÃO DECIMAL
+def funcDecimal():
     d = int(input("Digite decimal:"))
     limparTerminal()
 
-    dPrint = d
+    # SUBFUNÇÃO - DECIMAL PARA BINÁRIO
+    def deParaBi(argDe):
+        binario = ""
 
-    binario = ""
+        # calcula o decimal diluindo (/) o binário após obter o primeiro resto da divisão (0 ou 1) (%)
+        while argDe > 0:
+            binario += str (argDe % 2)
+            argDe = int (argDe / 2)
 
-    # calcula o decimal diluindo (/) o binário após obter o primeiro resto da divisão (0 ou 1) (%)
-    while d > 0:
-        binario += str (d % 2)
-        d = int (d / 2)
+        # Adiciona ao binário o numero '0' caso esteja faltando, para completar 8 bits
+        while len (binario) < 8:
+            binario += "0"
 
-    # Adiciona ao binário o numero '0' caso esteja faltando, para completar 8 bits
-    while len (binario) < 8:
-        binario += "0"
+        if len (binario) > 8:
+            print(f"ATENÇÂO: A representação máxima de decimal em binário de 8bits é 255\n\nBinário MAX: 11111111")
+            verMais = int(input("Deseja ver mais adiante disso?\nNão(0) | Sim(1)\n>>:"))
+            limparTerminal()
 
-    if len (binario) > 8:
-        print(f"ATENÇÂO: A representação máxima de decimal em binário de 8bits é 255\n\nBinário MAX: 11111111")
-        verMais = int(input("Deseja ver mais adiante disso?\nNão(0) | Sim(1)\n>>:"))
-        limparTerminal()
+            if verMais == 1:
+                print("Além de 8bits:\n")
+            else:
+                exit(0)
 
-        if verMais == 1:
-            print("Além de 8bits:\n")
-        else:
-            exit(0)
+        binario = binario[::-1]# técnica Slicing / inverte a string
+        return binario
 
-    binario = binario[::-1]# técnica Slicing / inverte a string
-
-    print(f"Decimal:{dPrint}\nBinário:{binario}")
+    print(f"Decimal:{d}\n\nBinário:{deParaBi(d)}\n\n")
 
 #--------------------------------------------------------------
-#Binário para decimal
+# FUNÇÃO BINÁRIO
     
-def binarioParaDec():
+def funcBinario():
     # pede o número em binário
     bi = str(input("Digite o binário:"))
     limparTerminal()
     
-    # inverte a string para ler da direita pra esquerda
-    bi = bi[::-1]# técnica Slicing
+    # SUBFUNÇÃO - BINÁRIO PARA DECIMAL
+    def biParaDec(argBi):
+        # inverte a string para ler da direita pra esquerda
+        argBi = argBi[::-1]# técnica Slicing
+        
+        decimal = 0
+        n = 0
+        
+        # verifica se cada caracter é igual a '1', e caso for, realiza o calculo binário
+        for b in argBi:
+            if (b == '1'):
+                decimal += 2 ** n
+        
+            n += 1
+        
+        return decimal
     
-    decimal = 0
-    n = 0
-    
-    # verifica se cada caracter é igual a '1', e caso for, realiza o calculo binário
-    for b in bi:
-        if (b == '1'):
-            decimal += 2 ** n
-    
-        n += 1
+
             
-    print(f"Binário:{bi}\nDecimal:{decimal}")
-            
+    print(f"Binário:{bi}\n\nDecimal:{biParaDec(bi)}")
+
+#----------------------------------------------------------------
+# FUNÇÃO OCTAL          
+
+def funcOctal():
+    print(f"Octal: Em desenvolvimento.")
+
+#----------------------------------------------------------------
+# FUNÇÃO HEXADECIMAL
+
+def funcHexadecimal():
+    print(f"Hexadecimal: Em desenvolvimento.")
 
 # -------------FUNÇÕES AUXILIÁRES-----------------
     
