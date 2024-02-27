@@ -7,6 +7,7 @@ def main():
         resp = menu()
         limparTerminal()
 
+
         while resp < 1 or resp > 4:
             resp = menu()
             limparTerminal()
@@ -32,7 +33,6 @@ def main():
         input("Erro: algo deu errado. Aperte ENTER para voltar ao menu.")
         limparTerminal()
         main()
-        
 
 # ------------FUNÇÕES SECUNDÁRIAS------------
 
@@ -71,9 +71,11 @@ def funcDecimal():
 
     print(f"Decimal:{d}\n\nBinário:{deParaBi(d)}\n\n")
 
+
 #--------------------------------------------------------------
 # FUNÇÃO BINÁRIO
     
+
 def funcBinario():
     # pede o número em binário
     bi = str(input("Digite o binário:"))
@@ -95,9 +97,7 @@ def funcBinario():
             n += 1
         
         return decimal
-    
-
-            
+               
     print(f"Binário:{bi}\n\nDecimal:{biParaDec(bi)}")
 
 #----------------------------------------------------------------
@@ -137,3 +137,4 @@ def menu():
 
 if __name__ == "__main__":
     main()
+
