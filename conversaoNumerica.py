@@ -45,6 +45,7 @@ def funcDecimal():
 
     # SUBFUNÇÃO - DECIMAL PARA BINÁRIO
     def deParaBi(argDe):
+
         binario = ""
 
         # calcula o decimal diluindo (/) o binário após obter o primeiro resto da divisão (0 ou 1) (%)
@@ -69,7 +70,31 @@ def funcDecimal():
         binario = binario[::-1]# técnica Slicing / inverte a string
         return binario
 
-    print(f"Decimal:{d}\n\nBinário:{deParaBi(d)}\n\n")
+    def deParaOctal(argDe):
+        
+        octal = ""
+
+        while argDe > 0:
+            octal += str (argDe % 8)
+            argDe = int (argDe / 8)
+
+        octal = octal[::-1]
+
+        return octal
+
+    def deParaHexa(argDe):
+        HexAuxiliar = "0123456789ABCDEF"
+        hexadecimal = ""
+
+        while argDe != 0:
+            hexadecimal += HexAuxiliar[(argDe % 16)] # pega a posição em hexAuxiliar
+            argDe = int (argDe / 16)
+
+        hexadecimal = hexadecimal[::-1]
+
+        return hexadecimal
+
+    print(f"Decimal:{d}\n\nBinário:{deParaBi(d)}\n\nOctal:{deParaOctal(d)}\n\nHexadecimal:{deParaHexa(d)}\n\n")
 
 
 #--------------------------------------------------------------
