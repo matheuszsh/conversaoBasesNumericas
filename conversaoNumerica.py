@@ -70,6 +70,7 @@ def funcDecimal():
         binario = binario[::-1]# técnica Slicing / inverte a string
         return binario
 
+    # SUBFUNÇÃO - DECIMAL PARA OCTAL
     def deParaOctal(argDe):
         
         octal = ""
@@ -82,12 +83,13 @@ def funcDecimal():
 
         return octal
 
+    # SUBFUNÇÃO - DECIMAL PARA HEXADECIMAL
     def deParaHexa(argDe):
-        HexAuxiliar = "0123456789ABCDEF"
+        hexAuxiliar = "0123456789ABCDEF"
         hexadecimal = ""
 
         while argDe != 0:
-            hexadecimal += HexAuxiliar[(argDe % 16)] # pega a posição em hexAuxiliar
+            hexadecimal += hexAuxiliar[(argDe % 16)] # pega a posição em hexAuxiliar
             argDe = int (argDe / 16)
 
         hexadecimal = hexadecimal[::-1]
@@ -108,7 +110,7 @@ def funcBinario():
     
     # SUBFUNÇÃO - BINÁRIO PARA DECIMAL
     def biParaDec(argBi):
-        # inverte a string para ler da direita pra esquerda
+        # inverte a string para ler da esquerda para direita >>>>
         argBi = argBi[::-1]# técnica Slicing
         
         decimal = 0
@@ -122,8 +124,72 @@ def funcBinario():
             n += 1
         
         return decimal
-               
-    print(f"Binário:{bi}\n\nDecimal:{biParaDec(bi)}")
+
+    # EM DESENVOLVIMENTO - DESFUNCIONAL           
+    """def biParaOctal(argBi):
+        argBi = argBi[::-1]
+
+        octalAuxiliar = ""
+        octal = 0
+        n = 0
+
+        for b in argBi:
+            if b == '1':
+                if n < 3:
+                    octal += 2 ** n
+
+            if (n == 3):
+                octalAuxiliar += str (octal)
+                octal = 0
+                n = 0
+
+            n += 1
+            
+        octalAuxiliar = str (octal) + octalAuxiliar
+
+        return octalAuxiliar"""
+
+    def biParaHexa(argBi):
+        argBi = argBi[::-1]
+
+        # Separando Strings em blocos de 4 bits
+        argBi2 = argBi[0:4]
+        argBi1 = argBi[4:8]
+
+        # Variáveis auxiliares
+        hexAuxiliar = "0123456789ABCDEF"
+        hexadecimalN = 0
+
+        hexaFinal = ""
+
+        n = 0
+
+        # Transformando primeiro bloco
+        for b1 in argBi1:
+            if (b1 == '1'):
+                hexadecimalN += 2**n
+
+            n += 1
+
+        hexaFinal += hexAuxiliar[hexadecimalN]
+
+        hexadecimalN = 0
+
+        n = 0
+
+        # Transformando o segundo bloco
+        for b2 in argBi2:
+            if (b2 == '1'):
+                hexadecimalN += 2**n
+
+            n += 1
+
+        hexaFinal += hexAuxiliar[hexadecimalN]
+
+        return hexaFinal
+    
+
+    print(f"Binário:{bi}\n\nDecimal:{biParaDec(bi)}\n\nHexadecimal: {biParaHexa(bi)}\n\n")
 
 #----------------------------------------------------------------
 # FUNÇÃO OCTAL          
