@@ -10,6 +10,16 @@ O projeto é um script simples para realizar conversões entre diferentes bases 
 
 O projeto é livre para todos que quiserem contribuir. Veja as implementações pendentes para contribuir.
 
+# Requisitos
+
+Para rodar este projeto, é necessário ter instalado o python3.
+
+'''bash
+  git clone https://github.com/matheuszsh/conversaoBasesNumericas
+  
+  sudo apt install python3
+'''
+
 # Funcionalidades
 
 As funcionalidades são divididas em função principal e funções secundárias com suas subfunções(presentes dentro das funções secundárias) e funções auxiliares.
