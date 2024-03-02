@@ -8,7 +8,7 @@ O projeto é um script simples para realizar conversões entre diferentes bases 
 
 # Contribuição
 
-O projeto é livre para todos que queiram contribuir. Veja as implementações pendentes para contribuir.
+O projeto é livre para todos que queiram contribuir. Veja as implementações pendentes para contribuir no tópico de **Funções Pendentes**.
 
 # Instalação
 
