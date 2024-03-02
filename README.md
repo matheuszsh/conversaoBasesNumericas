@@ -32,6 +32,16 @@ A função **funcDecimal** pede para que o usuário digite um número decimal e 
   
 **deParaHexa**: Traduz de decimal para Hexadecimal.  
 
+### Função: funcBinario()
+
+A função **funcBinario** pede para que o usuário digite um número em binário e exibe/print as conversões em: Decimal, Octal, Hexadecimal. Dentro desta função, estão presentes outras '3' subfunções: **biParaDec(), biParaOctal(), biParaHexa()**. As subfunções presentes na função funcDecimal, convertem o decimal digitado para cada uma das bases numéricas definidas no projeto.
+
+**biParaDec()**: Traduz de binário para decimal  
+  
+**biParaOctal()**: Traduz de binário para octal  
+  
+**biParaHexa()**: Traduz de binário para hexadecimal  
+  
 ## Funções pendentes
 
 ### Função: funcBinario().biParaOctal()
@@ -40,4 +50,16 @@ Esta função deve definir um parâmetro de entrada chamado **argBi** que será 
 
 ### Função: funcOctal()
 
-Esta função está em fase de protótipo e ainda não foi previamente implementada. Deve conter '3' funções denomidadas
+Esta função está em fase de protótipo e ainda não foi previamente implementada. Deve conter '3' funções denomidadas: octalParaDecimal(), octalParaBi(), octalParaHexa().
+
+**octalParaDecimal**: Traduz de octal para decimal  
+**octalParaBi**: Traduz de octal para binério  
+**octalParaHexa**: Traduz de octal para hexadecimal  
+
+### Função: funcHexadecimal()
+
+Esta função está em fase de protótipo e ainda não foi previamente implementada. Deve conter '3' funções denomidadas: hexaParaDecimal(), hexaParaBi(), hexaParaOctal().
+
+**hexaParaDecimal**: Traduz de hexadecimal para decimal
+**hexaParaBi**: Traduz de hexadecimal para binário
+**hexaParaOctal**: traduz de hexadecimal para octal
