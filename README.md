@@ -18,6 +18,8 @@ Para rodar este projeto, é necessário ter instalado o python3.
   
   `sudo apt install python3`
 
+  https://www.python.org/ftp/python/3.12.2/python-3.12.2-amd64.exe
+
 # Funcionalidades
 
 As funcionalidades são divididas em função principal e funções secundárias com suas subfunções(presentes dentro das funções secundárias) e funções auxiliares.
