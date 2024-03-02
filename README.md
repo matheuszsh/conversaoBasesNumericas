@@ -10,7 +10,7 @@ O projeto é um script simples para realizar conversões entre diferentes bases 
 
 O projeto é livre para todos que quiserem contribuir. Veja as implementações pendentes para contribuir.
 
-# Requisitos
+# Instalação
 
 Para rodar este projeto, é necessário ter instalado o python3.
 
