@@ -31,5 +31,13 @@ A função **funcDecimal** pede para que o usuário digite um número decimal e 
 **deParaOctal**: Traduz de decimal para octal.  
   
 **deParaHexa**: Traduz de decimal para Hexadecimal.  
-  
 
+## Funções pendentes
+
+### Função: funcBinario().biParaOctal()
+
+Esta função deve definir um parâmetro de entrada chamado **argBi** que será passado como argumento o binário digitado pelo usuário guardado na variável **bi**. Deve conter um algoritmo que realize a conversão correta de um número em binário para o seu equivalente em octal. O desenvolvimento do algoritmo fica a critério do desenvolvedor.
+
+### Função: funcOctal()
+
+Esta função está em fase de protótipo e ainda não foi previamente implementada. Deve conter '3' funções denomidadas
