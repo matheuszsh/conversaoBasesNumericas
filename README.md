@@ -24,4 +24,9 @@ Dentro desta função, foi inserido o controle de fluxo para acessar cada funç�
 
 ### Função: funcDecimal()
 
+A função **funcDecimal** pede para que o usuário digite um número decimal e exibe/print as conversões em: Binário, Octal, Hexadecimal. Dentro desta função, estão presentes outras '3' subfunções: deParaBi(), deParaOctal(), deParaHexa. As subfunções presentes na função funcDecimal, convertem o decimal digitado para cada uma das bases numéricas definidas no projeto.
+
+**deParaBi**: Traduz de decimal para binário.
+**deParaOctal**: Traduz de decimal para octal.
+**deParaHexa**: Traduz de decimal para Hexadecimal.
 
