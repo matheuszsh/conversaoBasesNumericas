@@ -14,11 +14,11 @@ O projeto é livre para todos que quiserem contribuir. Veja as implementações 
 
 Para rodar este projeto, é necessário ter instalado o python3.
 
-'''bash
+``bash
   git clone https://github.com/matheuszsh/conversaoBasesNumericas
   
   sudo apt install python3
-'''
+``
 
 # Funcionalidades
 
